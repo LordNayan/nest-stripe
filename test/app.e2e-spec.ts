@@ -59,7 +59,6 @@ describe('Integration: Full Flow', () => {
       .send({
         userId,
         planId: 'basic',
-        line_items: [{ price: 'price_123', quantity: 1 }],
         mode: 'payment',
         success_url: 'https://example.com/success',
         cancel_url: 'https://example.com/cancel',

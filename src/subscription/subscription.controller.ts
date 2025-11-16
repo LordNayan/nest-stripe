@@ -35,6 +35,7 @@ export class SubscriptionController {
         }, 'Active subscription found');
     }
 
+    @UseGuards(JwtAuthGuard)
     @Roles(Role.Admin)
     @Get('all')
     @ApiResponse({ status: 200, type: SuccessResponseDto })

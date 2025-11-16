@@ -31,8 +31,8 @@ export class AuthService {
 
     createToken(user: User) {
         return {
-            token: this.jwtService.sign({ sub: user._id, email: user.email, name: user.name }),
-            user: { id: user._id, email: user.email, name: user.name },
+            token: this.jwtService.sign({ sub: user._id, email: user.email, name: user.name, role: user.role }),
+            user: { id: user._id, email: user.email, name: user.name, role: user.role },
         };
     }
 }

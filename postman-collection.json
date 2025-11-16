@@ -1,0 +1,300 @@
+{
+    "collection": {
+        "info": {
+            "_postman_id": "5faf036d-17fb-4c64-ae92-c20e5c0586ed",
+            "name": "Stripe Assignment",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+            "updatedAt": "2025-11-16T13:00:53.000Z",
+            "createdAt": "2024-12-18T06:13:49.000Z",
+            "lastUpdatedBy": "8500267",
+            "uid": "8500267-5faf036d-17fb-4c64-ae92-c20e5c0586ed"
+        },
+        "item": [
+            {
+                "name": "Subscription",
+                "item": [
+                    {
+                        "name": "Get User Subscription",
+                        "id": "e9541e15-7ae5-4aef-8429-269e6b7f6c48",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Authorization",
+                                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTE5YWQyZjJlZmJkYWM5YzQ5YWIyYmIiLCJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwibmFtZSI6IlRlc3QgVXNlciIsImlhdCI6MTc2MzI5MDQxNSwiZXhwIjoxNzYzMzc2ODE1fQ._rM7s1x6WnXoeCmR6X2WfF6XAwHDDqKrUQfnM9rBYXA"
+                                }
+                            ],
+                            "url": {
+                                "raw": "http://localhost:3000/subscription",
+                                "protocol": "http",
+                                "host": [
+                                    "localhost"
+                                ],
+                                "port": "3000",
+                                "path": [
+                                    "subscription"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "8500267-e9541e15-7ae5-4aef-8429-269e6b7f6c48"
+                    },
+                    {
+                        "name": "Cancel Subscription",
+                        "id": "3f1f90ef-8217-4240-9e9a-850cd4f68a7d",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Authorization",
+                                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTE5YWQyZjJlZmJkYWM5YzQ5YWIyYmIiLCJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwibmFtZSI6IlRlc3QgVXNlciIsImlhdCI6MTc2MzI5MDQxNSwiZXhwIjoxNzYzMzc2ODE1fQ._rM7s1x6WnXoeCmR6X2WfF6XAwHDDqKrUQfnM9rBYXA"
+                                }
+                            ],
+                            "url": {
+                                "raw": "http://localhost:3000/subscription/cancel",
+                                "protocol": "http",
+                                "host": [
+                                    "localhost"
+                                ],
+                                "port": "3000",
+                                "path": [
+                                    "subscription",
+                                    "cancel"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "8500267-3f1f90ef-8217-4240-9e9a-850cd4f68a7d"
+                    },
+                    {
+                        "name": "Get All Subscriptions",
+                        "id": "9d603d17-3bee-4347-a4f7-6334bef49821",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "GET",
+                            "header": [
+                                {
+                                    "key": "Authorization",
+                                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTE5Yzg4MTFhNWE3OTQ1NGFhNTBlYTQiLCJlbWFpbCI6ImFkbWluQHN0cmlwZS5sb2NhbCIsIm5hbWUiOiJBZG1pbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc2MzI5Nzg2NywiZXhwIjoxNzYzMzg0MjY3fQ.EPEFgTzdskF-pCXnr6vY_zyRyGbNQADm7hBlkms7mEA",
+                                    "type": "text"
+                                }
+                            ],
+                            "url": {
+                                "raw": "http://localhost:3000/subscription/all",
+                                "protocol": "http",
+                                "host": [
+                                    "localhost"
+                                ],
+                                "port": "3000",
+                                "path": [
+                                    "subscription",
+                                    "all"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "8500267-9d603d17-3bee-4347-a4f7-6334bef49821"
+                    }
+                ],
+                "id": "34cd52b3-19c2-4543-8600-83a553a1f6d0",
+                "uid": "8500267-34cd52b3-19c2-4543-8600-83a553a1f6d0"
+            },
+            {
+                "name": "User",
+                "item": [
+                    {
+                        "name": "Create User",
+                        "id": "53281e5c-71bc-41c6-93eb-c43840202c0c",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\n    \"email\": \"test@email.com\",\n    \"password\": \"yourpassword\",\n    \"name\": \"Test User\"\n  }",
+                                "options": {
+                                    "raw": {
+                                        "language": "json"
+                                    }
+                                }
+                            },
+                            "url": {
+                                "raw": "http://localhost:3000/auth/signup",
+                                "protocol": "http",
+                                "host": [
+                                    "localhost"
+                                ],
+                                "port": "3000",
+                                "path": [
+                                    "auth",
+                                    "signup"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "8500267-53281e5c-71bc-41c6-93eb-c43840202c0c"
+                    },
+                    {
+                        "name": "Login User",
+                        "id": "5b7d30ba-a6f8-47a9-a5a5-f16bede0c9d2",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "auth": {
+                                "type": "noauth"
+                            },
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\n    \"email\": \"admin@stripe.local\",\n    \"password\": \"admin123\"\n  }",
+                                "options": {
+                                    "raw": {
+                                        "language": "json"
+                                    }
+                                }
+                            },
+                            "url": {
+                                "raw": "http://localhost:3000/auth/login",
+                                "protocol": "http",
+                                "host": [
+                                    "localhost"
+                                ],
+                                "port": "3000",
+                                "path": [
+                                    "auth",
+                                    "login"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "8500267-5b7d30ba-a6f8-47a9-a5a5-f16bede0c9d2"
+                    }
+                ],
+                "id": "669617d2-eb6b-400a-931d-f7b8a2bffce6",
+                "uid": "8500267-669617d2-eb6b-400a-931d-f7b8a2bffce6"
+            },
+            {
+                "name": "Payment",
+                "item": [
+                    {
+                        "name": "Create Checkout Session",
+                        "id": "4d819fa5-b70e-4a1b-9343-d8f0f5f7c84f",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "auth": {
+                                "type": "noauth"
+                            },
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "Authorization",
+                                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTE5YWQyZjJlZmJkYWM5YzQ5YWIyYmIiLCJlbWFpbCI6InVzZXIxQGV4YW1wbGUuY29tIiwibmFtZSI6IlRlc3QgVXNlciIsImlhdCI6MTc2MzI5MDQxNSwiZXhwIjoxNzYzMzc2ODE1fQ._rM7s1x6WnXoeCmR6X2WfF6XAwHDDqKrUQfnM9rBYXA"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\n    \"userId\": \"<USER_ID>\",\n    \"planId\": \"basic\",\n  \"mode\": \"payment\",\n    \"success_url\": \"https://example.com/success\",\n    \"cancel_url\": \"https://example.com/cancel\"\n  }",
+                                "options": {
+                                    "raw": {
+                                        "language": "json"
+                                    }
+                                }
+                            },
+                            "url": {
+                                "raw": "http://localhost:3000/payments/checkout",
+                                "protocol": "http",
+                                "host": [
+                                    "localhost"
+                                ],
+                                "port": "3000",
+                                "path": [
+                                    "payments",
+                                    "checkout"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "8500267-4d819fa5-b70e-4a1b-9343-d8f0f5f7c84f"
+                    },
+                    {
+                        "name": "Payment Success Webhook",
+                        "id": "8647bdea-3060-46c5-96c0-c9c7b04d9297",
+                        "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                        },
+                        "request": {
+                            "method": "POST",
+                            "header": [
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                }
+                            ],
+                            "body": {
+                                "mode": "raw",
+                                "raw": "{\n    \"type\": \"checkout.session.completed\",\n    \"data\": {\n      \"object\": {\n        \"id\": \"cs_test_a11YYufWQzNY63zpQ6QSNRQhkUpVph4WRmzW0zWJO2znZKdVujZ0N0S22u\",\n        \"metadata\": {\n          \"userId\": \"6919ad2f2efbdac9c49ab2bb\",\n          \"planId\": \"basic\"\n        }\n      }\n    }\n  }",
+                                "options": {
+                                    "raw": {
+                                        "language": "json"
+                                    }
+                                }
+                            },
+                            "url": {
+                                "raw": "http://localhost:3000/payments/webhook",
+                                "protocol": "http",
+                                "host": [
+                                    "localhost"
+                                ],
+                                "port": "3000",
+                                "path": [
+                                    "payments",
+                                    "webhook"
+                                ]
+                            }
+                        },
+                        "response": [],
+                        "uid": "8500267-8647bdea-3060-46c5-96c0-c9c7b04d9297"
+                    }
+                ],
+                "id": "fe4c7214-2351-4b40-94f9-f544a491c848",
+                "uid": "8500267-fe4c7214-2351-4b40-94f9-f544a491c848"
+            }
+        ]
+    }
+}

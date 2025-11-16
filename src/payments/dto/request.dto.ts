@@ -2,41 +2,37 @@ import { ApiProperty } from '@nestjs/swagger';
 import { IsString, IsArray, IsObject } from 'class-validator';
 
 export class CreateCheckoutSessionRequestDto {
-    @ApiProperty()
+    @ApiProperty({ example: 'userId123' })
     @IsString()
     userId: string;
 
-    @ApiProperty()
+    @ApiProperty({ example: 'basic' })
     @IsString()
     planId: string;
 
-    @ApiProperty({ type: 'array', items: { type: 'object' } })
-    @IsArray()
-    line_items: any[];
-
-    @ApiProperty()
+    @ApiProperty({ example: 'payment' })
     @IsString()
     mode: string;
 
-    @ApiProperty()
+    @ApiProperty({ example: 'https://example.com/success' })
     @IsString()
     success_url: string;
 
-    @ApiProperty()
+    @ApiProperty({ example: 'https://example.com/cancel' })
     @IsString()
     cancel_url: string;
 
-    @ApiProperty()
+    @ApiProperty({ example: { userId: 'userId123', planId: 'basic' } })
     @IsObject()
     metadata: any;
 }
 
 export class WebhookEventRequestDto {
-    @ApiProperty()
+    @ApiProperty({ example: 'checkout.session.completed' })
     @IsString()
     type: string;
 
-    @ApiProperty()
+    @ApiProperty({ example: { object: { id: 'cs_test', metadata: { userId: 'userId123', planId: 'basic' } } } })
     @IsObject()
     data: any;
 }
