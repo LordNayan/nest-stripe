@@ -8,6 +8,9 @@ import { createDefaultAdminUser } from './common/utils/create-default-admin-user
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  // Enable CORS
+  app.enableCors();
+
   // Global exception filter
   app.useGlobalFilters(new GlobalExceptionFilter());
 

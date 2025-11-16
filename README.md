@@ -43,3 +43,6 @@ npm run test:e2e
 ## Postman Collection
 
 A Postman collection for testing all endpoints is available at the project root: [`Nest Stripe.postman_collection.json`](./postman-collection.json).
+
+## Important Note
+Stripe is mocked in this project for all payment and subscription flows. This is because Stripe sandbox access is not available in India without an invite. All payment/session data is for testing and demonstration only.
