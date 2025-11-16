@@ -13,6 +13,10 @@ export class SubscriptionService {
         return this.subscriptionModel.create(data);
     }
 
+    async findAllSubscriptions() {
+        return this.subscriptionModel.find().sort({ createdAt: -1 });
+    }
+
     async findLatestActiveSubscription(userId: string) {
         return this.subscriptionModel.findOne({ userId, status: 'active' }).sort({ createdAt: -1 });
     }
