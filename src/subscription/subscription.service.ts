@@ -5,9 +5,7 @@ import { Subscription } from './subscription.schema';
 
 @Injectable()
 export class SubscriptionService {
-    constructor(@InjectModel(Subscription.name) private subscriptionModel: Model<Subscription>) {
-        console.log('SubscriptionService instantiated');
-    }
+    constructor(@InjectModel(Subscription.name) private subscriptionModel: Model<Subscription>) { }
 
     async createSubscription(data: Partial<Subscription>) {
         return this.subscriptionModel.create(data);

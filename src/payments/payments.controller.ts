@@ -1,5 +1,5 @@
 
-import { Body, Controller, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, HttpCode, Post, UseGuards } from '@nestjs/common';
 import { PaymentsService } from './payments.service';
 import { checkoutSessionCreateMock } from './mock/checkout-session-create.mock';
 import { PaymentStatus } from './enums/payment-status.enum';
@@ -22,10 +22,11 @@ export class PaymentsController {
     ) { }
 
     @UseGuards(JwtAuthGuard)
-    @ApiResponse({ status: 200, type: SuccessResponseDto })
+    @ApiResponse({ status: 201, type: SuccessResponseDto })
     @ApiResponse({ status: 401, type: PaymentUnauthorizedErrorDto })
     @Post('checkout')
     @ApiBody({ type: CreateCheckoutSessionRequestDto })
+    @HttpCode(201)
     async createCheckoutSession(@Body() body: CreateCheckoutSessionRequestDto) {
         // Mocked response for checkout session creation
         return new SuccessResponse({ url: checkoutSessionCreateMock.url, session: checkoutSessionCreateMock }, 'Checkout session created');
@@ -35,6 +36,7 @@ export class PaymentsController {
     @ApiResponse({ status: 400, type: PaymentWebhookErrorDto })
     @Post('webhook')
     @ApiBody({ type: WebhookEventRequestDto })
+    @HttpCode(200)
     async handleWebhook(@Body() event: WebhookEventRequestDto) {
         // Stripe webhook event handling for stripe-mock
         if (!event) throw new BadRequestException('No event payload received');

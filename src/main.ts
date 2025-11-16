@@ -1,16 +1,19 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { Logger } from '@nestjs/common';
+import { Logger, ValidationPipe } from '@nestjs/common';
 import { GlobalExceptionFilter } from './common/global-exception.filter';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
+  // Global exception filter
   app.useGlobalFilters(new GlobalExceptionFilter());
-  const { ValidationPipe } = await import('@nestjs/common');
+
+  // Global validation pipe
   app.useGlobalPipes(new ValidationPipe());
 
   // Swagger setup
-  const { SwaggerModule, DocumentBuilder } = await import('@nestjs/swagger');
   const config = new DocumentBuilder()
     .setTitle('Nest Stripe API')
     .setDescription('API documentation for Nest Stripe subscription system')
@@ -20,10 +23,12 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 
-  await app.listen(process.env.PORT ?? 3000);
+  const port = process.env.PORT ? Number(process.env.PORT) : 3000;
+  await app.listen(port);
   const appUrl = await app.getUrl();
 
   Logger.log(`Nest application successfully started at ${appUrl}`, 'NestApplication');
   Logger.log(`API docs available at: ${appUrl}/api`, 'NestApplication');
 }
+
 bootstrap();

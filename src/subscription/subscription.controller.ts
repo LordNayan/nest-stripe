@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, UseGuards, Req } from '@nestjs/common';
+import { Body, Controller, Get, Post, UseGuards, Req, HttpCode } from '@nestjs/common';
 import { SubscriptionService } from './subscription.service';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { SuccessResponse } from '../common/response';
@@ -33,7 +33,6 @@ export class SubscriptionController {
                 stripeSubscriptionId: subscription.stripeSubscriptionId,
             }
         }, 'Active subscription found');
-
     }
 
     @Roles(Role.Admin)
@@ -42,7 +41,7 @@ export class SubscriptionController {
     @ApiResponse({ status: 401, type: SubscriptionUnauthorizedErrorDto })
     async getAllSubscriptions() {
         const subscriptions = await this.subscriptionService.findAllSubscriptions();
-        return new SuccessResponse({ subscriptions }, 'All subscriptions fetched');
+        return new SuccessResponse(subscriptions, 'All subscriptions fetched');
     }
 
     @UseGuards(JwtAuthGuard)
@@ -50,6 +49,7 @@ export class SubscriptionController {
     @ApiResponse({ status: 200, type: SuccessResponseDto })
     @ApiResponse({ status: 400, type: SubscriptionNotFoundErrorDto })
     @ApiResponse({ status: 401, type: SubscriptionUnauthorizedErrorDto })
+    @HttpCode(200)
     async cancelSubscription(@Req() req) {
         const userId = req.user.userId;
         const cancelled = await this.subscriptionService.cancelLatestActiveSubscription(userId);
